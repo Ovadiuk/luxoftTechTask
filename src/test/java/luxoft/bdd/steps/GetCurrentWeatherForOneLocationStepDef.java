@@ -41,7 +41,7 @@ public class GetCurrentWeatherForOneLocationStepDef implements En {
             response = restClient.getWeatherByCityName(cityName);
         });
 
-        Given("User call method get Weather By City Name with city \"([^\"]*)\" name and Country \"([^\"]*)\"$",(String cityName,String country)->{
+        Given("User call method get Weather By City Name \"([^\"]*)\" name and Country \"([^\"]*)\"$",(String cityName,String country)->{
             response = restClient.getWeatherByCityNameAndCountryName(cityName,country);
         });
 

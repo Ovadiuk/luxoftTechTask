@@ -1,9 +1,9 @@
-@get_weather_by_city_name
-Feature: get weather by city name
+@get_weather_by_city_name_and_country
+Feature: get weather by city name and country name
 
   @smoke
   Scenario Outline: get weather by city name (city name and country)
-    When User call method get Weather By City Name with city "<CityName>" name and Country "<country>"
+    When User call method get Weather By City Name "<CityName>" name and Country "<country>"
     Then User receives status code "<StatusCode>"
 
     Examples:
@@ -16,7 +16,7 @@ Feature: get weather by city name
 
   @regression
   Scenario Outline: get weather by city name and respons should be present (city name and country)
-    When User call method get Weather By City Name with city "<CityName>" name and Country "<country>"
+    When User call method get Weather By City Name "<CityName>" name and Country "<country>"
     Then User receives status code "<StatusCode>"
     And User search fields in response
       |coord|
@@ -37,8 +37,8 @@ Feature: get weather by city name
 
   @regression
   Scenario Outline: get weather by city name and check data from UI (city name and country)
-    Given User call method get Weather By City Name with city "<CityName>" name and Country "<country>"
-    When User call method get Weather By City Name "<CityName>"
+    Given User save information about weather from weather.com by City "<CityName>"
+    When User call method get Weather By City Name "<CityName>" name and Country "<country>"
     And User save information from EndPoint response
     Then User compare information from UI and EndPoint
 
