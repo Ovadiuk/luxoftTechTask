@@ -8,7 +8,7 @@ this progect has next tags:
 2) regression
 3) get_weather_by_city_name
 4) get_weather_by_city_id
-5) get_weather_by_city_name
+5) get_weather_by_city_name_and_country
 
 test report save in:
 target/cucumber-html-reports 
